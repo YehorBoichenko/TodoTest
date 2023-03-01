@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.task-form-container {
+    margin-bottom: 20px;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-form label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.task-form input[type="text"],
+.task-form textarea {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.task-form input[type="text"] {
+    border: 1px solid #ccc;
+}
+
+.task-form input[type="text"]:focus {
+    border-color: #0074d9;
+    outline: none;
+}
+
+.task-form textarea {
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+.task-form textarea:focus {
+    border-color: #0074d9;
+    outline: none;
+}
+
+.task-form .error {
+    color: red;
+}
+
+.task-list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.task-list th,
+.task-list td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.task-list th {
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+.task-list td {
+    vertical-align: top;
+}
+
+.task-list td .task-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.task-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.task-modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 600px;
+    width: 80%;
+}
+
+.task-modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.task-modal-close:hover,
+.task-modal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.task-modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.task-modal-description {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+tr,thead{
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.checkbox-label {
+    position: relative;
+    display: inline-block;
+    padding-left: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkmark {
+    position: absolute;
+    top: -7px;
+        left: 20px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type='checkbox']:checked+.checkmark:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: green;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content p {
+    margin: 10px 0;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 20px;
+}
+
+.modal-content label span {
+    margin-left: 10px;
+}
+
+.modal-content .close-btn {
+    display: block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content .close-btn:hover {
+    background-color: #d32f2f;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+div {
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type='text'],
+textarea {
+    border: 1px solid #ddd;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+input[type='text']:focus,
+textarea:focus {
+    outline: none;
+    border-color: #77b6ff;
+}
+
+button[type='submit'] {
+    background-color: #77b6ff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type='submit']:hover {
+    background-color: #449dff;
+}
+
+input:invalid,
+textarea:invalid {
+    border-color: red;
+}
+
+input:invalid+span::before,
+textarea:invalid+span::before {
+    content: 'This field is empty';
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+input:valid+span::before,
+textarea:valid+span::before {
+    content: '';
+}
+.checkmarkModal {
+    position: absolute;
+    top: 1px;
+    left: 50px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input[type='checkbox']:checked+.checkmarkModal:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: green;
+}
+.checkboxModal-label {
+    position: relative;
+    display: inline-block;
+
+    margin-right: 15px;
+    cursor: pointer;
+    user-select: none;
+}
